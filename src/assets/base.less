@@ -1,0 +1,80 @@
+@import '~antd/dist/reset.css';
+
+// 定义变量
+@primary-color: #007bff;
+@secondary-color: #6c757d;
+
+// 全局样式
+body {
+  font-family: Arial, sans-serif;
+  color: @secondary-color;
+  background: #f2f2f2;
+  margin: 0;
+}
+
+a {
+  color: @primary-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// header 样式
+header {
+  background: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+    margin: 0;
+  }
+  nav {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      li {
+        margin-left: 10px;
+        &:first-child {
+          margin-left: 0;
+        }
+        a {
+          &:hover {
+            color: white;
+            background: @primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// main 样式
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  article {
+    padding: 10px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    h2 {
+      margin: 0 0 10px;
+    }
+  }
+}
+
+// footer 样式
+footer {
+  padding: 10px;
+  background: @primary-color;
+  color: white;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+

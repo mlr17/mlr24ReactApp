@@ -100,7 +100,15 @@ module.exports = function (proxy, allowedHost) {
       index: paths.publicUrlOrPath,
     },
     // `proxy` is run between `before` and `after` `webpack-dev-server` hooks
-    proxy,
+  
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000/', // 后台服务地址以及端口号
+        changeOrigin: true, // 是否跨域
+        pathRewrite: { '^/api': '/' } // 重写路由，把 /api去掉，保证接口的正确性
+      }
+    },
+    
     onBeforeSetupMiddleware(devServer) {
       // Keep `evalSourceMapMiddleware`
       // middlewares before `redirectServedPath` otherwise will not have any effect
